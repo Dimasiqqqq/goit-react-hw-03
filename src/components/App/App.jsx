@@ -8,9 +8,9 @@ import { nanoid } from "nanoid";
 
 function App() {
 	// Аналіз вмісту та оновлення localStorage
-	const [contactsList, setcontactsList] = useState(() => {
-		JSON.parse(localStorage.getItem("saved-contacts")) ?? contacts;
-	});
+	const [contactsList, setContactsList] = useState(() => {
+		return JSON.parse(localStorage.getItem("saved-contacts")) ?? contacts;
+	  });
 
 	useEffect(() => {
 		localStorage.setItem("saved-contacts", JSON.stringify(contactsList));
